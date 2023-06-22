@@ -13,7 +13,8 @@ with open('features.pkl', 'rb') as file:
 # Function to preprocess the input data
 def preprocess_input(features):
     # Convert categorical variables to dummy variables
-    features = pd.get_dummies(features, columns=['job', 'marital', 'education', 'job', 'marital', 'education', 'default', 'housing', 'loan', 'poutcome'])
+    features = pd.get_dummies(features, columns=['job', 'marital', 'education', 'default', 'housing', 'loan', 'poutcome'])
+    
     return features
 
 # Function to predict the target variable based on input features
