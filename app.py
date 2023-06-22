@@ -14,6 +14,9 @@ with open('features.pkl', 'rb') as file:
 def preprocess_input(features):
     # Convert categorical variables to dummy variables
     features = pd.get_dummies(features, columns=['job', 'marital', 'education', 'default', 'housing', 'loan', 'poutcome'])
+
+    # Reorder the columns to match the model's expected feature order
+    features = features.reindex(columns=feature_names, fill_value=0)
     
     return features
 
